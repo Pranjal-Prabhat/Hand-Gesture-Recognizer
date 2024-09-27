@@ -20,6 +20,7 @@ git clone https://github.com/Pranjal-Prabhat/Hand-Index-Finger_down-Recognizer.g
 cd Hand-Index-Finger_down-Recognizer
 pip install -r requirements.txt
 python index_finger_gesture.py
+cd Hand-Index-Finger_down-Recognizer
 ```
 ### Indirect
 1. Install (mediapipe,opencv) in pip.
