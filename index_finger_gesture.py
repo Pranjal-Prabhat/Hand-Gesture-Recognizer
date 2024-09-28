@@ -75,6 +75,6 @@ def recog(cam_no=0, cam_not_open_error=True, precision_values=[45, 48.4, 50,8,3.
 
                 cap.release()
                 cv2.destroyAllWindows()
-        data = [hand,output, fps, diff_x, diff_y, avj_z, t_diff]
+        yield [hand,output, fps, diff_x, diff_y, avj_z, t_diff]
 
 recog(0,True,[45, 48.4, 50,8,3.5],False,True,27,True,True,False,False,True)
