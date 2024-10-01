@@ -7,6 +7,11 @@
 Author: Pranjal Prabhat 👨‍🔬
 ---
 
+## What's New
+-Now works for longer range.
+
+-Bug fixes for wrongly rotated hand detection.
+
 ## What's Diffrent 👀
 -Easy acces to recognisation.
 
