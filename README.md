@@ -25,11 +25,12 @@ Hand-Index-Finger_down-Recogniser can be used to recognise wether the index fing
 #### Run these is cmd to run the file directly:
 ```cmd
 cd %HOMEPATH%\Downloads
-git clone https://github.com/Pranjal-Prabhat/Hand-Index-Finger_down-Recognizer.git
-cd Hand-Index-Finger_down-Recognizer
+git clone https://github.com/Pranjal-Prabhat/Hand-Recognizer.git
+cd Hand-Recognizer
+git checkout tags/v1.0.1 -b v1.0.1-branch
 pip install -r requirements.txt
 python index_finger_gesture.py
-cd Hand-Index-Finger_down-Recognizer
+
 ```
 ### Indirect
 1. Install (mediapipe,opencv) using pip.
