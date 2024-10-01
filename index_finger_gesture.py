@@ -31,6 +31,7 @@ def recog(cam_no=0, cam_not_open_error=True, precision_values=[45, 48.4, 50,8,3.
                 base_y = hand_landmarks.landmark[5].y * 100
                 tip_z = ((hand_landmarks.landmark[8].z + 1) / 2) * 100
                 base_z = ((hand_landmarks.landmark[5].z + 1) / 2) * 100
+                wrist_y = hand_landmarks.landmark[0].y * 100
 
                 avj_z = (tip_z + base_z) / 2
                 diff_x = abs(tip_x - base_x)
@@ -38,17 +39,18 @@ def recog(cam_no=0, cam_not_open_error=True, precision_values=[45, 48.4, 50,8,3.
                 diff_z = abs(tip_z - base_z)
                 t_diff = (diff_y**2 + diff_x**2)**0.5
 
-                if precision_values[0] < avj_z < precision_values[1]:
+                if ((precision_values[0] < avj_z < precision_values[1]) and tip_y<wrist_y):
                     if t_diff < precision_values[3] or tip_y > base_y:
                         output = 1
                     else:
                         output = 0
-                elif precision_values[1] < avj_z < precision_values[2]:
+                elif ((precision_values[1] < avj_z < precision_values[2]) and tip_y<wrist_y):
                     if t_diff < precision_values[4] or tip_y > base_y:
                         output = 1
                     else:
                         output = 0
-                elif avj_z < precision_values[0] or avj_z > precision_values[2]:
+                elif (avj_z < precision_values[0] or avj_z > precision_values[2]):
+                    output=0
                     if out_of_range_error:
                         raise RuntimeError("Out of range error.")
 
@@ -78,3 +80,7 @@ def recog(cam_no=0, cam_not_open_error=True, precision_values=[45, 48.4, 50,8,3.
         yield [hand,output, fps, diff_x, diff_y, avj_z, t_diff]
 
 recog(0,True,[45, 48.4, 50,8,3.5],False,True,27,True,True,False,False,True)
+for result in recog():
+    hand, output, fps, diff_x, diff_y, avj_z, t_diff = result
+    print(f"Hand: {hand}, Output: {output}, FPS: {fps}, X: {diff_x}, Y: {diff_y}, Z: {avj_z}, t_diff: {t_diff}")
+
