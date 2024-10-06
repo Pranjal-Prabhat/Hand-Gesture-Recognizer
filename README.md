@@ -1,4 +1,4 @@
-# Hand-Index-Finger_down-Recogniser
+# Hand-Gesture-Recogniser
 
 ---
 Author: Pranjal Prabhat 👨‍🔬
@@ -16,16 +16,16 @@ Hand-Index-Finger_down-Recogniser can be used to recognise wether the index fing
 #### Run these is cmd to run the file directly:
 ```cmd
 cd %HOMEPATH%\Downloads
-git clone https://github.com/Pranjal-Prabhat/Hand-Index-Finger_down-Recognizer.git
-cd Hand-Index-Finger_down-Recognizer
+git clone https://github.com/Pranjal-Prabhat/Hand-Gesture-Recogniser.git
+cd Hand-Gesture-Recogniser
 pip install -r requirements.txt
-python index_finger_gesture.py
+python handGestTest.py
 ```
 ### Indirect
 1. Install (mediapipe,opencv) in pip.
 2. Clone the repo.
 3. Unzip the repo.
-4. Run the python file in the rpo.
+4. Run the test python file in the repo.
 
 Note: Use 'esc' key to close window.
 
