@@ -12,8 +12,9 @@ Author: Pranjal Prabhat 👨‍🔬
 Hand-Index-Finger_down-Recogniser can be used to recognise wether the index finger tip is close to the base of index finger.
 
 ## How to Use 👀
-### Direct
+### Automatic
 #### Run these is cmd to run the file directly:
+##### Windows
 ```cmd
 cd %HOMEPATH%\Downloads
 git clone https://github.com/Pranjal-Prabhat/Hand-Gesture-Recogniser.git
@@ -21,12 +22,23 @@ cd Hand-Gesture-Recogniser-main
 pip install -r requirements.txt
 python handGestTest.py
 ```
+##### Linux
+```terminal
+cd ~
+python3 -m venv hand-gesture-1
+cd hand-gesture-1
+git clone https://github.com/Pranjal-Prabhat/Hand-Gesture-Recogniser.git
+cd Hand-Gesture-Recogniser-main
+pip3 install -r requirements.txt
+python3 handGestTest.py
+```
 ### Indirect
-1. Install (mediapipe,opencv) in pip.
-2. Clone the repo.
-3. Unzip the repo.
-4. Run the test python file in the repo.
 
+1. Get a stable python3 version (3.11.8 recommonded)
+2. Make a python3 Envoirment
+3. In the envoirment install mediapipe and opencv
+4. clone the repo inside envoirment
+5. run the HandGestTest.py code inside the envoirment
 Note: Use 'esc' key to close window.
 
 ## Customizations
