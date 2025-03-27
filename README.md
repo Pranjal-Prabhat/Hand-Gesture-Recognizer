@@ -14,14 +14,6 @@ Hand-Index-Finger_down-Recogniser can be used to recognise wether the index fing
 ## How to Use 👀
 ### Automatic
 #### Run these is cmd to run the file directly:
-##### Windows
-```cmd
-cd %HOMEPATH%\Downloads
-git clone https://github.com/Pranjal-Prabhat/Hand-Gesture-Recogniser.git
-cd Hand-Gesture-Recogniser-main
-pip install -r requirements.txt
-python handGestTest.py
-```
 ##### Linux
 ```terminal
 cd ~
