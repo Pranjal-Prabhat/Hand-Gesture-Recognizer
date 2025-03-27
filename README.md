@@ -17,10 +17,11 @@ Hand-Index-Finger_down-Recogniser can be used to recognise wether the index fing
 ##### Linux
 ```terminal
 cd ~
-python3 -m venv hand-gesture-1
-cd hand-gesture-1
+python3 -m venv hand-gesture
+cd hand-gesture
+source bin/activate
 git clone https://github.com/Pranjal-Prabhat/Hand-Gesture-Recognizer.git
-cd Hand-Gesture-Recogniser-main
+cd Hand-Gesture-Recognizer
 pip3 install -r requirements.txt
 python3 handGestTest.py
 ```
