@@ -16,19 +16,50 @@ Hand-Index-Finger_down-Recogniser can be used to recognise wether the index fing
 #### Run these is cmd to run the file directly:
 ##### Linux
 ```terminal
-cd ~
-python3 -m venv hand-gesture
-cd hand-gesture
-source bin/activate
+#!/bin/bash
+
+INSTALL_DIR="$HOME/.local/share/hand-gesture"
+mkdir -p "$INSTALL_DIR"
+python3 -m venv "$INSTALL_DIR/venv"
+source "$INSTALL_DIR/venv/bin/activate"
 pip3 install hand-gest-recog-example-by-pranjal
-python3 -c "import hand_gest_example"
+
+echo '#!/bin/bash' > "$INSTALL_DIR/hand-gest-test-by-pranjal.sh"
+echo "source \"$INSTALL_DIR/venv/bin/activate\" && python3 -c 'import hand_gest_example'" >> "$INSTALL_DIR/hand-gest-test-by-pranjal.sh"
+chmod +x "$INSTALL_DIR/hand-gest-test-by-pranjal.sh"
+
+mkdir -p "$HOME/.local/bin"
+ln -sf "$INSTALL_DIR/hand-gest-test-by-pranjal.sh" "$HOME/.local/bin/hand-gest-test-by-pranjal"
+
+DESKTOP_FILE="$HOME/Desktop/hand-gest-test-by-pranjal.desktop"
+echo "[Desktop Entry]
+Type=Application
+Name=Hand Gest Test by Pranjal
+Exec=$INSTALL_DIR/hand-gest-test-by-pranjal.sh
+Icon=utilities-terminal
+Terminal=true" > "$DESKTOP_FILE"
+chmod +x "$DESKTOP_FILE"
+
+export PATH="$HOME/.local/bin:$PATH"
+echo "Setup complete. Run 'hand-gest-test-by-pranjal' in terminal or use the Desktop shortcut."
+bash
 ```
 
 ##### Windows
 ```terminal
-pip install hand-gest-recog-example-by-pranjal
-python -c "import hand_gest_example"
+pip install --user hand-gest-recog-example-by-pranjal && (
+echo @echo off
+echo python -c "import hand_gest_example"
+) > "%USERPROFILE%\Desktop\handgest.bat" && setx PATH "%PATH%;%USERPROFILE%\Desktop" && powershell "$s=(New-Object -COM WScript.Shell).CreateShortcut('%USERPROFILE%\Desktop\hand-gest-test-by-pranjal.lnk'); $s.TargetPath='%COMSPEC%'; $s.Arguments='/k handgest'; $s.Save()"
 ```
+###Note: Bigger script in linux than windows doesn't means windows is better!
+
+###Running the script:
+#####Open cmd in windows or Terminal for linux then run this command or justopen the desktop app.
+```terminal
+hand-gest-test-by-pranjal
+```
+
 ### Indirect
 
 1. Get a stable python3 version (3.11.8 recommonded)
