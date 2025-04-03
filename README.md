@@ -52,13 +52,15 @@ echo @echo off
 echo python -c "import hand_gest_example"
 ) > "%USERPROFILE%\Desktop\handgest.bat" && setx PATH "%PATH%;%USERPROFILE%\Desktop" && powershell "$s=(New-Object -COM WScript.Shell).CreateShortcut('%USERPROFILE%\Desktop\hand-gest-test-by-pranjal.lnk'); $s.TargetPath='%COMSPEC%'; $s.Arguments='/k handgest'; $s.Save()"
 ```
-### Note: Bigger script in linux than windows doesn't means windows is better!
+### Note: Bigger script in linux doesn't means windows is better! 
 
 ### Running the script:
-##### Open cmd in windows or Terminal for linux then run this command or justopen the desktop app.
+##### Open cmd in windows or Terminal for linux then run this command:
 ```terminal
 hand-gest-test-by-pranjal
 ```
+
+#### Note: You can directly run the app from desktop
 
 ### Indirect
 
