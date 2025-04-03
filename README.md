@@ -20,10 +20,14 @@ cd ~
 python3 -m venv hand-gesture
 cd hand-gesture
 source bin/activate
-git clone https://github.com/Pranjal-Prabhat/Hand-Gesture-Recognizer.git
-cd Hand-Gesture-Recognizer
-pip3 install -r requirements.txt
-python3 handGestTest.py
+pip3 install hand-gest-recog-example-by-pranjal
+python3 -c "import hand_gest_example"
+```
+
+##### Windows
+```terminal
+pip install hand-gest-recog-example-by-pranjal
+python -c "import hand_gest_example"
 ```
 ### Indirect
 
